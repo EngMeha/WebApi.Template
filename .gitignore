@@ -1,0 +1,18 @@
+.idea/
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.log
+nupkg/
+package/
+# NuGet / packages artifacts
+*.nupkg
+*.snupkg
+
+# Zip/office-style leftovers (часто случайно по€вл€ютс€)
+[Content_Types].xml
+_rels/
+[Content_Types].xml
+_rels/
