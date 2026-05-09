@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
 
-namespace WebApi.Template.Infrastructure.Auth;
+namespace WebApi.Template.Infrastructure.Auth.Jwt;
 
 public class JwtEvents: JwtBearerEvents
 {

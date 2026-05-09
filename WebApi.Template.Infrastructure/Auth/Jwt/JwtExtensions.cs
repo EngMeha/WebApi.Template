@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using WebApi.Template.Infrastructure.Auth.Options;
+using WebApi.Template.Infrastructure.Auth.Jwt.Options;
 
-namespace WebApi.Template.Infrastructure.Auth;
+namespace WebApi.Template.Infrastructure.Auth.Jwt;
 
 public static class JwtExtensions
 {

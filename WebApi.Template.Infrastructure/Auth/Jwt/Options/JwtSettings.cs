@@ -1,4 +1,4 @@
-﻿namespace WebApi.Template.Infrastructure.Auth.Options;
+﻿namespace WebApi.Template.Infrastructure.Auth.Jwt.Options;
 
 public class JwtSettings
 {
