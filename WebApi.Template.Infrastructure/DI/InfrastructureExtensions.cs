@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WebApi.Template.Infrastructure.Auth;
 using WebApi.Template.Infrastructure.Auth.Jwt;
 using WebApi.Template.Infrastructure.Data;
+using WebApi.Template.Infrastructure.DI.Modules;
 
 namespace WebApi.Template.Infrastructure.DI;
 
@@ -13,6 +14,8 @@ public static class InfrastructureExtensions
         services.AddJwt(configuration);
         services.AddData(configuration);
         services.AddAuth();
+        services.AddSwagger();
+        services.AddCorsPolicies();
         return services;
     }
 }
