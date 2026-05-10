@@ -4,7 +4,6 @@ using WebApi.Template.Infrastructure.DI;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddOpenApi("v1");
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
@@ -22,7 +21,6 @@ if (!app.Environment.IsDevelopment())
 }
 else
 {
-    app.MapOpenApi();
     app.UseSwagger()
         .UseSwaggerUI(options =>
         {
