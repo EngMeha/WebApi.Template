@@ -11,4 +11,10 @@
       <ProjectReference Include="..\WebApi.Template.Domain\WebApi.Template.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.6" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.6" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.6" />
+    </ItemGroup>
+
 </Project>
