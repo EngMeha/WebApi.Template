@@ -12,12 +12,12 @@ public static class InfrastructureExtensions
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddJwt(configuration);
-        services.AddData(configuration);
-        services.AddAuth();
-        services.AddSwagger();
-        services.AddCorsPolicies();
-        services.AddExceptionHandler<GlobalExceptionHandler>();
+        services.AddData(configuration);        
+        services.AddAuth();                     
+        services.AddJwt(configuration);        
+        services.AddCorsPolicies();             
+        services.AddSwagger();                  
+        services.AddExceptionHandler<GlobalExceptionHandler>(); 
         services.AddProblemDetails();
         return services;
     }

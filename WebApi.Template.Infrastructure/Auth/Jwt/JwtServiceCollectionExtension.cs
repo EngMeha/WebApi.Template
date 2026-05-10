@@ -7,7 +7,7 @@ using WebApi.Template.Infrastructure.Auth.Jwt.Options;
 
 namespace WebApi.Template.Infrastructure.Auth.Jwt;
 
-public static class JwtExtensions
+public static class JwtServiceCollectionExtension
 {
     public static IServiceCollection AddJwt(this IServiceCollection services, IConfiguration configuration)
     {
