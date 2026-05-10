@@ -41,8 +41,13 @@ using (IServiceScope scope = app.Services.CreateScope())
 app.UseExceptionHandler();
 app.UseHttpsRedirection();
 
+
+
 app.UseCors("AllowFrontend");
 app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
