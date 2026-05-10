@@ -4,6 +4,7 @@ using WebApi.Template.Infrastructure.Auth;
 using WebApi.Template.Infrastructure.Auth.Jwt;
 using WebApi.Template.Infrastructure.Data;
 using WebApi.Template.Infrastructure.DI.Modules;
+using WebApi.Template.Infrastructure.Services;
 
 namespace WebApi.Template.Infrastructure.DI;
 
@@ -16,6 +17,8 @@ public static class InfrastructureExtensions
         services.AddAuth();
         services.AddSwagger();
         services.AddCorsPolicies();
+        services.AddExceptionHandler<GlobalExceptionHandler>();
+        services.AddProblemDetails();
         return services;
     }
 }

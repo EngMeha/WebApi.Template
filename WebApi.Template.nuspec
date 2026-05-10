@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>WebApi.Template</id>
+    <version>1.0.0</version>
+    <authors>EngMeha</authors>
+    <description>Clean Architecture Web API solution template</description>
+    <tags>template solution csharp webapi clean-architecture</tags>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+  
+  <files>
+    <file src="WebApi.Template\**" target="content\WebApi.Template" exclude="**\bin\**;**\obj\**" />
+    <file src="WebApi.Template.Application\**" target="content\WebApi.Template.Application" exclude="**\bin\**;**\obj\**" />
+    <file src="WebApi.Template.Domain\**" target="content\WebApi.Template.Domain" exclude="**\bin\**;**\obj\**" />
+    <file src="WebApi.Template.Infrastructure\**" target="content\WebApi.Template.Infrastructure" exclude="**\bin\**;**\obj\**" />
+    <file src=".template.config\**" target="content\.template.config" />
+    <file src="WebApi.Template.sln" target="content" />
+    <file src=".gitignore" target="content" />
+  </files>
+</package>

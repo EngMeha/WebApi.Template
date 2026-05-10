@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "EngMeha",
+  "classifications": ["Web", "API", "Microservice", "Clean Architecture"],
+  "identity": "WebApi.Template",
+  "name": "WebApi Template",
+  "shortName": "tempsol",
+  "sourceName": "WebApi.Template",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  }
+}
