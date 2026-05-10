@@ -34,7 +34,8 @@ else
 using (IServiceScope scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<MyDbContext>();
-    await context.Database.MigrateAsync();
+    //TODO раскоментировать при создании миграций
+    //await context.Database.MigrateAsync();
 }
 
 app.UseExceptionHandler();
