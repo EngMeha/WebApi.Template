@@ -15,7 +15,7 @@ public static class InfrastructureExtensions
         services.AddData(configuration);        
         services.AddAuth();                     
         services.AddJwt(configuration);        
-        services.AddCorsPolicies();             
+        services.AddCorsPolicies(configuration);             
         services.AddSwagger();                  
         services.AddExceptionHandler<GlobalExceptionHandler>(); 
         services.AddProblemDetails();

@@ -1,17 +1,21 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace WebApi.Template.Infrastructure.DI.Modules;
 
 public static class CorsServiceCollectionExtension
 {
-    public static IServiceCollection AddCorsPolicies(this IServiceCollection services)
+    public static IServiceCollection AddCorsPolicies(this IServiceCollection services, IConfiguration configuration)
     {
+        var url = configuration["CORS:Url"] 
+                  ?? throw new InvalidOperationException("CORS:Url is not configured.");
+        
         services.AddCors(option =>
         {
             option.AddPolicy("AllowFrontend", policy =>
             {
                 policy
-                    .WithOrigins("http://localhost:8000", "https://drkb-portal.ru")
+                    .WithOrigins(url)
                     .AllowCredentials()
                     .AllowAnyHeader()
                     .AllowAnyMethod();
