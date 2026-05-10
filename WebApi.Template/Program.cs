@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using WebApi.Template.Infrastructure.Data;
 using WebApi.Template.Infrastructure.DI;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +29,12 @@ else
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi.Template");
             options.RoutePrefix = string.Empty;
         });
+}
+
+using (IServiceScope scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<MyDbContext>();
+    await context.Database.MigrateAsync();
 }
 
 app.UseExceptionHandler();
