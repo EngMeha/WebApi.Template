@@ -87,6 +87,30 @@ dotnet run --project .\WebApi.Template\WebApi.Template.csproj
   - DI модули (`AddInfrastructure`, `AddData`, `AddJwt`, `AddCorsPolicies`, `AddSwagger`)
   - автоподключение портов/query‑objects через `Scrutor`
 
+## Используемые NuGet пакеты
+
+Ниже перечислены основные пакеты, которые уже подключены в шаблоне (с версиями из `.csproj`).
+
+### WebApi.Template (API)
+
+- **Microsoft.EntityFrameworkCore.Design (10.0.6)**: tooling для EF Core (миграции/скэффолдинг). В проекте помечен как `PrivateAssets=all`.
+
+### WebApi.Template.Application
+
+- **Mediator.Abstractions (3.0.2)**: абстракции Mediator (интерфейсы/контракты) для построения use-cases/обработчиков.
+- **ErrorOr (2.0.1)**: удобный тип результата “успех/ошибка” для use-cases и доменной/прикладной логики.
+
+### WebApi.Template.Infrastructure
+
+- **Microsoft.EntityFrameworkCore (10.0.6)**: EF Core runtime.
+- **Npgsql.EntityFrameworkCore.PostgreSQL (10.0.1)**: провайдер EF Core для PostgreSQL.
+- **Microsoft.EntityFrameworkCore.Design (10.0.6)**: tooling EF Core (миграции). Помечен как `PrivateAssets=all`.
+- **Microsoft.AspNetCore.Authentication.JwtBearer (10.0.6)**: JWT Bearer аутентификация.
+- **Swashbuckle.AspNetCore (10.1.7)**: Swagger/OpenAPI генерация и UI.
+- **Scrutor (7.0.0)**: assembly scanning для авто‑регистрации реализаций (порты/query objects).
+- **Mediator.SourceGenerator (3.0.2)**: source generator для Mediator. Помечен как `PrivateAssets=all`.
+- **Microsoft.Extensions.Configuration (10.0.6)** и **Microsoft.Extensions.DependencyInjection (10.0.6)**: базовые пакеты конфигурации и DI (на самом деле обычно уже приезжают транзитивно, но здесь зафиксированы явно).
+
 ## Дефолтное поведение
 
 - **Маршруты**: пример контроллера доступен по `GET /temp`
