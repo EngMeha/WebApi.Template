@@ -92,6 +92,9 @@ dotnet run --project .\WebApi.Template\WebApi.Template.csproj
 - **Маршруты**: пример контроллера доступен по `GET /temp`
 - **Auth**: в пайплайне уже подключены `UseAuthentication()` и `UseAuthorization()`
 - **Миграции**: вызов `Database.MigrateAsync()` сейчас **закомментирован** (TODO в `Program.cs`)
+  - Если раскомментировать `await context.Database.MigrateAsync();`, приложение будет **автоматически применять все неприменённые EF Core миграции** при старте.
+  - Для pet‑проекта это удобно, но для production обычно делают отдельный шаг деплоя или включают автоприменение **по флагу/окружению**.
+  - Важно: это сработает только если миграции **созданы** (есть `Migrations` в `WebApi.Template.Infrastructure`).
 
 ## Упаковка шаблона (.nupkg)
 
