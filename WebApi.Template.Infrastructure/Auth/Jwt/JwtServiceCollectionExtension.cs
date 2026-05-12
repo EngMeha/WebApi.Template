@@ -11,7 +11,8 @@ public static class JwtServiceCollectionExtension
 {
     public static IServiceCollection AddJwt(this IServiceCollection services, IConfiguration configuration)
     {
-        var jwtSettings = configuration.GetSection("JwtSettings").Get<JwtSettings>();
+        var jwtSettings = configuration.GetSection("JwtSettings").Get<JwtSettings>()
+            ?? throw new ArgumentException("JwtSettings section is not configured.");
 
         if (string.IsNullOrWhiteSpace(jwtSettings.SecretKey))
             throw new ArgumentException("JWT Secret is not configured.");
