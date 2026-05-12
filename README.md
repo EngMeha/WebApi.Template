@@ -8,6 +8,26 @@
 - .NET SDK (шаблон таргетит `net10.0`)
 - PostgreSQL (EF Core провайдер по умолчанию — `Npgsql`)
 
+## Упаковка шаблона (.nupkg)
+
+В репозитории есть:
+- `WebApi.Template.nuspec` (package type `Template`)
+- `.template.config/template.json` (`shortName: tempsol`)
+
+Чтобы собрать `.nupkg`, удобнее использовать NuGet CLI:
+
+```bash
+nuget pack .\WebApi.Template.nuspec -OutputDirectory .\nupkg
+```
+
+Дальше — установка и создание проекта:
+
+```bash
+dotnet new install .\nupkg\WebApi.Template.1.0.0.nupkg
+dotnet new tempsol -n MyCompany.MyService
+```
+
+
 ## Установка шаблона
 
 После публикации в NuGet:
@@ -119,23 +139,3 @@ dotnet run --project .\MyCompany.MyService\MyCompany.MyService.csproj
   - Если раскомментировать `await context.Database.MigrateAsync();`, приложение будет **автоматически применять все неприменённые EF Core миграции** при старте.
   - Для pet‑проекта это удобно, но для production обычно делают отдельный шаг деплоя или включают автоприменение **по флагу/окружению**.
   - Важно: это сработает только если миграции **созданы** (есть `Migrations` в `WebApi.Template.Infrastructure`).
-
-## Упаковка шаблона (.nupkg)
-
-В репозитории есть:
-- `WebApi.Template.nuspec` (package type `Template`)
-- `.template.config/template.json` (`shortName: tempsol`)
-
-Чтобы собрать `.nupkg`, удобнее использовать NuGet CLI:
-
-```bash
-nuget pack .\WebApi.Template.nuspec -OutputDirectory .\nupkg
-```
-
-Дальше — установка и создание проекта:
-
-```bash
-dotnet new install .\nupkg\WebApi.Template.1.0.0.nupkg
-dotnet new tempsol -n MyCompany.MyService
-```
-
