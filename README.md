@@ -40,7 +40,7 @@ cd .\MyCompany.MyService
 ## Запуск API
 
 ```bash
-dotnet run --project .\WebApi.Template\WebApi.Template.csproj
+dotnet run --project .\MyCompany.MyService\MyCompany.MyService.csproj
 ```
 
 В `Development` включается Swagger UI на корне (route prefix пустой).
