@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>WebApi.Template</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>EngMeha</authors>
     <description>Clean Architecture Web API solution template</description>
     <tags>template solution csharp webapi clean-architecture</tags>
