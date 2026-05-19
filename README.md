@@ -23,7 +23,7 @@ nuget pack .\WebApi.Template.nuspec -OutputDirectory .\nupkg
 Дальше — установка и создание проекта:
 
 ```bash
-dotnet new install .\nupkg\WebApi.Template.1.0.0.nupkg
+dotnet new install .\nupkg\WebApi.Template.<version>.nupkg
 dotnet new tempsol -n MyCompany.MyService
 ```
 
